@@ -44,7 +44,7 @@ const MenuSection = () => {
                           </Badge>
                         )}
                       </div>
-                      <p className="mt-1 text-sm text-muted-foreground">{item.description}</p>
+                      <p className="mt-1 text-[15px] leading-snug text-muted-foreground">{item.description}</p>
                     </div>
                     <span className="shrink-0 font-semibold text-primary">{item.price}</span>
                   </div>
