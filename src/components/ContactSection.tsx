@@ -1,10 +1,6 @@
 import { MapPin, Phone, Mail, Clock, Instagram } from "lucide-react";
 import { cafeInfo, openingHours } from "@/data/cafe-data";
 
-const Facebook = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-);
-
 const ContactSection = () => {
   return (
     <section id="contact" className="py-16 md:py-24">
@@ -79,15 +75,6 @@ const ContactSection = () => {
                 aria-label="Instagram"
               >
                 <Instagram className="h-5 w-5" />
-              </a>
-              <a
-                href={cafeInfo.socialMedia.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full bg-primary p-3 text-primary-foreground transition-colors hover:bg-primary/80"
-                aria-label="Facebook"
-              >
-                <Facebook />
               </a>
             </div>
           </div>

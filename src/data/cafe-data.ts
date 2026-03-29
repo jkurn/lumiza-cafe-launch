@@ -11,10 +11,9 @@ export const cafeInfo = {
   addressNote: "Under the Holiday Inn",
   phone: "(02) 8937 0767",
   email: "hello@lumizacafe.com.au",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=5%2F28+Spring+St+Bondi+Junction+NSW",
+  googleMapsUrl: "https://share.google/AEQ2r54rQRDk2zIQj",
   socialMedia: {
     instagram: "https://instagram.com/lumizacafe",
-    facebook: "https://facebook.com/lumizacafe",
   },
 };
 
