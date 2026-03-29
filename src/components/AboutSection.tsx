@@ -15,7 +15,7 @@ const AboutSection = () => {
               height={800}
             />
           </div>
-          <div>
+          <div className="max-w-prose">
             <p className="text-sm font-medium uppercase tracking-[0.15em] text-muted-foreground">
               Our Story
             </p>
