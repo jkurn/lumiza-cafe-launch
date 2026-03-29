@@ -20,7 +20,7 @@ const ContactSection = () => {
             href={cafeInfo.googleMapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="block overflow-hidden rounded-xl border border-border"
+            className="group relative block overflow-hidden rounded-xl border border-border"
           >
             <iframe
               title="Lumiza Cafe Location"
@@ -32,6 +32,11 @@ const ContactSection = () => {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
+            <div className="absolute inset-0 flex items-end justify-center bg-transparent transition-colors group-hover:bg-foreground/10">
+              <span className="mb-4 rounded-full bg-background/90 px-4 py-2 text-sm font-medium text-foreground opacity-0 shadow-sm transition-opacity group-hover:opacity-100">
+                Open in Google Maps
+              </span>
+            </div>
           </a>
 
           {/* Info */}
