@@ -13,7 +13,7 @@ export const cafeInfo = {
   email: "hello@lumiza.cafe",
   googleMapsUrl: "https://share.google/AEQ2r54rQRDk2zIQj",
   socialMedia: {
-    instagram: "https://instagram.com/lumizacafe",
+    instagram: "https://www.instagram.com/lumiza.cafe/",
   },
 };
 
