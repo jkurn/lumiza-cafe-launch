@@ -1,0 +1,100 @@
+import { MapPin, Phone, Mail, Clock, Instagram } from "lucide-react";
+import { cafeInfo, openingHours } from "@/data/cafe-data";
+
+const Facebook = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+);
+
+const ContactSection = () => {
+  return (
+    <section id="contact" className="py-16 md:py-24">
+      <div className="container px-4 md:px-8">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-sm font-medium uppercase tracking-[0.15em] text-muted-foreground">
+            Find Us
+          </p>
+          <h2 className="mt-2 font-serif text-4xl font-bold text-foreground md:text-5xl">
+            Visit Lumiza Cafe
+          </h2>
+        </div>
+
+        <div className="mx-auto mt-12 grid max-w-5xl gap-10 md:grid-cols-2">
+          {/* Map */}
+          <div className="overflow-hidden rounded-xl border border-border">
+            <iframe
+              title="Lumiza Cafe Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3311.6!2d151.247!3d-33.893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDUzJzM1LjAiUyAxNTHCsDE0JzQ5LjAiRQ!5e0!3m2!1sen!2sau!4v1"
+              width="100%"
+              height="350"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+
+          {/* Info */}
+          <div className="space-y-6">
+            <div className="flex items-start gap-4">
+              <MapPin className="mt-1 h-5 w-5 shrink-0 text-accent" />
+              <div>
+                <p className="font-medium text-foreground">{cafeInfo.address}</p>
+                <p className="text-sm text-muted-foreground">{cafeInfo.addressNote}</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <Phone className="mt-1 h-5 w-5 shrink-0 text-accent" />
+              <a href={`tel:${cafeInfo.phone}`} className="font-medium text-foreground hover:text-primary">
+                {cafeInfo.phone}
+              </a>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <Mail className="mt-1 h-5 w-5 shrink-0 text-accent" />
+              <a href={`mailto:${cafeInfo.email}`} className="font-medium text-foreground hover:text-primary">
+                {cafeInfo.email}
+              </a>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <Clock className="mt-1 h-5 w-5 shrink-0 text-accent" />
+              <div className="space-y-1">
+                {openingHours.map((h) => (
+                  <div key={h.days} className="flex gap-4 text-sm">
+                    <span className="w-36 font-medium text-foreground">{h.days}</span>
+                    <span className="text-muted-foreground">{h.hours}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Social */}
+            <div className="flex gap-4 pt-4">
+              <a
+                href={cafeInfo.socialMedia.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full bg-primary p-3 text-primary-foreground transition-colors hover:bg-primary/80"
+                aria-label="Instagram"
+              >
+                <Instagram className="h-5 w-5" />
+              </a>
+              <a
+                href={cafeInfo.socialMedia.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full bg-primary p-3 text-primary-foreground transition-colors hover:bg-primary/80"
+                aria-label="Facebook"
+              >
+                <Facebook />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ContactSection;
