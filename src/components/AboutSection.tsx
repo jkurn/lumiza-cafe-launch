@@ -8,7 +8,7 @@ const AboutSection = () => {
           <div className="overflow-hidden rounded-xl">
             <img
               src={ownersImage}
-              alt="Fanny and Shaw, owners of Lumiza Cafe"
+              alt="Fenny and Shaw, owners of Lumiza Cafe"
               className="h-auto w-full object-cover"
               loading="lazy"
               width={800}
@@ -20,7 +20,7 @@ const AboutSection = () => {
               Our Story
             </p>
             <h2 className="mt-2 font-serif text-4xl font-bold text-foreground md:text-5xl">
-              Meet Fanny & Shaw
+              Meet Fenny & Shaw
             </h2>
             <p className="mt-6 leading-relaxed text-muted-foreground">
               We started Lumiza Cafe with a simple belief: everyone deserves a
