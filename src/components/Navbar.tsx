@@ -21,7 +21,7 @@ const Navbar = () => {
         </a>
 
         {/* Desktop nav */}
-        <div className="hidden items-center gap-6 md:flex">
+        <div className="hidden items-center gap-6 lg:flex">
           {navLinks.map((l) => (
             <a
               key={l.href}
@@ -39,7 +39,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile toggle */}
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="flex items-center gap-2 lg:hidden">
           <Button asChild size="sm" className="bg-accent text-accent-foreground hover:bg-accent/90">
             <a href={cafeInfo.googleMapsUrl} target="_blank" rel="noopener noreferrer">
               <MapPin className="h-4 w-4" />
@@ -57,7 +57,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="border-t border-border/50 bg-background px-4 py-4 md:hidden">
+        <div className="border-t border-border/50 bg-background px-4 py-4 lg:hidden">
           {navLinks.map((l) => (
             <a
               key={l.href}
