@@ -1,6 +1,6 @@
 # Lumiza Cafe
 
-Website for **Lumiza Cafe** — a cozy hidden gem in Bondi Junction, Sydney, serving exceptional specialty coffee and hearty breakfasts. Run by Fanny & Shaw.
+Website for **Lumiza Cafe** — a cozy hidden gem in Bondi Junction, Sydney, serving exceptional specialty coffee and hearty breakfasts. Run by Fenny & Shaw.
 
 📍 5/28 Spring St, Bondi Junction NSW (under the Holiday Inn)
 🕐 Mon–Fri 7am–3pm · Sat–Sun 8am–3pm
@@ -22,7 +22,7 @@ Website for **Lumiza Cafe** — a cozy hidden gem in Bondi Junction, Sydney, ser
 |-------|-------------|
 | `/` | Home — hero, highlights, welcome section |
 | `/menu` | Menu — food and drink offerings |
-| `/about` | About Us — the story of Fanny & Shaw |
+| `/about` | About Us — the story of Fenny & Shaw |
 | `/contact` | Contact & Location — hours, map, directions |
 
 ## Getting Started
