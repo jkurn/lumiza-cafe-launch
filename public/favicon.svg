@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Steam -->
+  <path d="M32 4 Q28 10 32 16 Q36 22 32 28" stroke="#613b40" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <path d="M50 4 Q46 10 50 16 Q54 22 50 28" stroke="#613b40" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <path d="M68 4 Q64 10 68 16 Q72 22 68 28" stroke="#613b40" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <!-- Rim -->
+  <rect x="16" y="29" width="68" height="7" rx="2" fill="#3c2e2f"/>
+  <!-- Cup body -->
+  <polygon points="18,36 82,36 78,82 22,82" fill="#613b40"/>
+  <!-- Handle -->
+  <path d="M82 46 Q98 46 98 62 Q98 78 82 78" stroke="#613b40" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <!-- Saucer -->
+  <polygon points="12,82 88,82 82,92 18,92" fill="#3c2e2f"/>
+</svg>
