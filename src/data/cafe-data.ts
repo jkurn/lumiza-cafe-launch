@@ -10,7 +10,7 @@ export const cafeInfo = {
   address: "5/28 Spring St, Bondi Junction",
   addressNote: "Under the Holiday Inn",
   phone: "(02) 8937 0767",
-  email: "hello@lumizacafe.com.au",
+  email: "hello@lumiza.cafe",
   googleMapsUrl: "https://share.google/AEQ2r54rQRDk2zIQj",
   socialMedia: {
     instagram: "https://instagram.com/lumizacafe",
