@@ -9,7 +9,7 @@ export const cafeInfo = {
   tagline: "Your hidden gem in Bondi Junction",
   address: "5/28 Spring St, Bondi Junction",
   addressNote: "Under the Holiday Inn",
-  phone: "(02) 1234 5678",
+  phone: "(02) 8937 0767",
   email: "hello@lumizacafe.com.au",
   googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=5%2F28+Spring+St+Bondi+Junction+NSW",
   socialMedia: {
@@ -19,9 +19,9 @@ export const cafeInfo = {
 };
 
 export const openingHours = [
-  { days: "Monday – Friday", hours: "6:30 AM – 3:00 PM" },
-  { days: "Saturday", hours: "7:00 AM – 3:00 PM" },
-  { days: "Sunday", hours: "7:30 AM – 2:00 PM" },
+  { days: "Monday – Friday", hours: "5:30 AM – 3:00 PM" },
+  { days: "Saturday", hours: "5:30 AM – 12:00 PM" },
+  { days: "Sunday", hours: "Closed" },
 ];
 
 export interface MenuItem {
