@@ -115,7 +115,7 @@ export const menuCategories: MenuCategory[] = [
   {
     title: "Sides",
     items: [
-      { name: "Hot Chips", description: "Crispy hot chips", price: "$7.50" },
+      { name: "Hot Chips", description: "Crispy hot chips", price: "$5.00 / $7.50" },
       { name: "Wedges", description: "Served w/ sour cream & sweet chilli", price: "$10.90" },
       { name: "Spring Rolls (4pcs)", description: "Crispy spring rolls", price: "$7.90" },
       { name: "Chicken Wings (4pcs)", description: "Golden fried chicken wings", price: "$8.90" },
