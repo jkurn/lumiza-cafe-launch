@@ -1,5 +1,10 @@
+import { useRef, useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { menuCategories } from "@/data/cafe-data";
 import { Badge } from "@/components/ui/badge";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const tagColors: Record<string, string> = {
   popular: "bg-accent text-accent-foreground",
@@ -8,10 +13,59 @@ const tagColors: Record<string, string> = {
 };
 
 const MenuSection = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const ctx = gsap.context(() => {
+      const header = el.querySelector("[data-menu-header]");
+      if (header) {
+        gsap.from(header, {
+          opacity: 0,
+          y: 24,
+          duration: 0.7,
+          ease: "power2.out",
+          scrollTrigger: { trigger: header, start: "top 85%" },
+        });
+      }
+
+      el.querySelectorAll("[data-menu-category]").forEach((cat) => {
+        const title = cat.querySelector("[data-cat-title]");
+        const items = cat.querySelectorAll("[data-menu-item]");
+
+        if (title) {
+          gsap.from(title, {
+            opacity: 0,
+            x: -20,
+            duration: 0.6,
+            ease: "power2.out",
+            scrollTrigger: { trigger: cat, start: "top 85%" },
+          });
+        }
+
+        if (items.length) {
+          gsap.from(items, {
+            opacity: 0,
+            y: 16,
+            duration: 0.5,
+            stagger: 0.06,
+            ease: "power2.out",
+            scrollTrigger: { trigger: cat, start: "top 80%" },
+          });
+        }
+      });
+    }, el);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section id="menu" className="py-16 md:py-24">
+    <section id="menu" ref={sectionRef} className="py-16 md:py-24">
       <div className="container px-4 md:px-8">
-        <div className="mx-auto max-w-3xl text-center">
+        <div data-menu-header className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-medium uppercase tracking-[0.15em] text-muted-foreground">
             What We Serve
           </p>
@@ -25,15 +79,16 @@ const MenuSection = () => {
 
         <div className="mt-12 space-y-12">
           {menuCategories.map((category) => (
-            <div key={category.title}>
-              <h3 className="mb-6 border-b border-border pb-2 font-serif text-2xl font-semibold text-primary md:text-3xl">
+            <div key={category.title} data-menu-category>
+              <h3 data-cat-title className="mb-6 border-b border-border pb-2 font-serif text-2xl font-semibold text-primary md:text-3xl">
                 {category.title}
               </h3>
               <div className="grid gap-4 sm:grid-cols-2">
                 {category.items.map((item) => (
                   <div
                     key={item.name}
-                    className="flex justify-between gap-4 rounded-lg p-4 transition-colors hover:bg-card"
+                    data-menu-item
+                    className="flex justify-between gap-4 rounded-lg border-l-2 border-transparent p-4 transition-all duration-200 hover:border-accent hover:bg-card"
                   >
                     <div className="flex-1">
                       <div className="flex items-center gap-2">

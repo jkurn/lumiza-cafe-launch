@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cafeInfo } from "@/data/cafe-data";
@@ -12,9 +12,36 @@ const navLinks = [
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("#home");
+
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 20);
+
+      // Determine which section is in view
+      const sections = navLinks.map((l) => l.href.slice(1));
+      let current = "#home";
+      for (const id of sections) {
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= 100) current = `#${id}`;
+        }
+      }
+      setActiveSection(current);
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-border/50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+    <nav
+      className={`sticky top-0 z-50 border-b bg-background/95 backdrop-blur transition-shadow duration-300 supports-[backdrop-filter]:bg-background/80 ${
+        scrolled ? "border-border/50 shadow-md shadow-foreground/5" : "border-transparent shadow-none"
+      }`}
+    >
       <div className="container flex h-16 items-center justify-between px-4 md:px-8">
         <a href="#home" className="font-serif text-xl font-bold text-primary md:text-2xl">
           {cafeInfo.name}
@@ -26,9 +53,16 @@ const Navbar = () => {
             <a
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-foreground/80 transition-colors hover:text-primary"
+              className={`relative text-sm font-medium transition-colors hover:text-primary ${
+                activeSection === l.href ? "text-primary" : "text-foreground/80"
+              }`}
             >
               {l.label}
+              <span
+                className={`absolute -bottom-1 left-0 h-0.5 rounded-full bg-accent transition-all duration-300 ${
+                  activeSection === l.href ? "w-full" : "w-0"
+                }`}
+              />
             </a>
           ))}
           <Button asChild size="sm" className="bg-accent text-accent-foreground hover:bg-accent/90">
@@ -63,7 +97,11 @@ const Navbar = () => {
               key={l.href}
               href={l.href}
               onClick={() => setMobileOpen(false)}
-              className="block py-3 text-base font-medium text-foreground/80 transition-colors hover:text-primary"
+              className={`block py-3 text-base font-medium transition-colors hover:text-primary ${
+                activeSection === l.href
+                  ? "text-primary border-l-2 border-accent pl-3"
+                  : "text-foreground/80"
+              }`}
             >
               {l.label}
             </a>

@@ -1,11 +1,14 @@
 import { MapPin, Phone, Mail, Clock, Instagram } from "lucide-react";
 import { cafeInfo, openingHours } from "@/data/cafe-data";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const ContactSection = () => {
+  const revealRef = useScrollReveal({ stagger: 0.1, y: 24 });
+
   return (
     <section id="contact" className="py-16 md:py-24">
-      <div className="container px-4 md:px-8">
-        <div className="mx-auto max-w-3xl text-center">
+      <div ref={revealRef} className="container px-4 md:px-8">
+        <div data-reveal className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-medium uppercase tracking-[0.15em] text-muted-foreground">
             Find Us
           </p>
@@ -17,6 +20,7 @@ const ContactSection = () => {
         <div className="mx-auto mt-12 grid max-w-5xl gap-10 md:grid-cols-2">
           {/* Map */}
           <a
+            data-reveal
             href={cafeInfo.googleMapsUrl}
             target="_blank"
             rel="noopener noreferrer"
@@ -40,7 +44,7 @@ const ContactSection = () => {
           </a>
 
           {/* Info */}
-          <div className="space-y-6">
+          <div data-reveal className="space-y-6">
             <a href={cafeInfo.googleMapsUrl} target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 group">
               <MapPin className="mt-1 h-5 w-5 shrink-0 text-accent" />
               <div>
