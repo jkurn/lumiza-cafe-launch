@@ -100,10 +100,10 @@ export const menuCategories: MenuCategory[] = [
   {
     title: "Pastas",
     items: [
-      { name: "Beef Bolognaise", description: "Choose spaghetti, fettuccini, beef tortellini or penne", price: "$15.90" },
-      { name: "Boscaiola", description: "Choose spaghetti, fettuccini, beef tortellini or penne", price: "$15.90" },
+      { name: "Beef Bolognaise", description: "Choose spaghetti, fettuccini, beef tortellini or penne", price: "$15.90", tag: "popular" },
+      { name: "Boscaiola", description: "Choose spaghetti, fettuccini, beef tortellini or penne", price: "$15.90", tag: "popular" },
       { name: "Chilli Chicken", description: "Choose spaghetti, fettuccini, beef tortellini or penne", price: "$15.90" },
-      { name: "Amatriciana", description: "Choose spaghetti, fettuccini, beef tortellini or penne", price: "$15.90" },
+      { name: "Amatriciana", description: "Choose spaghetti, fettuccini, beef tortellini or penne", price: "$15.90", tag: "popular" },
       { name: "Mushroom Sauce", description: "Choose spaghetti, fettuccini, beef tortellini or penne", price: "$15.90", tag: "veggie" },
       { name: "Vegetarian Sauce", description: "Choose spaghetti, fettuccini, beef tortellini or penne", price: "$15.90", tag: "veggie" },
       { name: "Napolitana", description: "Choose spaghetti, fettuccini, beef tortellini or penne", price: "$13.90", tag: "veggie" },
@@ -154,7 +154,7 @@ export const menuCategories: MenuCategory[] = [
     title: "Cold Drinks",
     items: [
       { name: "Freshly Squeezed Juice", description: "Freshly squeezed to order", price: "$7.50" },
-      { name: "Iced Coffee", description: "Espresso over ice with milk", price: "$7.50" },
+      { name: "Iced Coffee", description: "Espresso over ice with milk", price: "$7.50", tag: "popular" },
       { name: "Iced Mocha", description: "Chocolate espresso over ice", price: "$7.50" },
       { name: "Iced Chocolate", description: "Rich chocolate over ice", price: "$7.50" },
       { name: "Iced Chai", description: "Spiced chai over ice", price: "$7.50" },
