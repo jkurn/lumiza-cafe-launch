@@ -1,4 +1,4 @@
-import ownersImage from "@/assets/owners-placeholder.jpg";
+import ownersImage from "@/assets/fanny-and-shaw.jpg";
 
 const AboutSection = () => {
   return (
