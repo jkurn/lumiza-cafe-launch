@@ -13,28 +13,31 @@ const AboutSection = () => {
     if (!el) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    const ctx = gsap.context(() => {
-      const image = el.querySelector("[data-about-image]");
-      const textBlocks = el.querySelectorAll("[data-about-text]");
+    const image = el.querySelector("[data-about-image]");
+    const textBlocks = el.querySelectorAll("[data-about-text]");
 
+    if (image) gsap.set(image, { opacity: 0, x: -40 });
+    if (textBlocks.length) gsap.set(textBlocks, { opacity: 0, y: 24 });
+
+    const ctx = gsap.context(() => {
       if (image) {
-        gsap.from(image, {
-          opacity: 0,
-          x: -40,
+        gsap.to(image, {
+          opacity: 1,
+          x: 0,
           duration: 0.9,
           ease: "power2.out",
-          scrollTrigger: { trigger: el, start: "top 75%" },
+          scrollTrigger: { trigger: el, start: "top 75%", toggleActions: "play none none none" },
         });
       }
 
       if (textBlocks.length) {
-        gsap.from(textBlocks, {
-          opacity: 0,
-          y: 24,
+        gsap.to(textBlocks, {
+          opacity: 1,
+          y: 0,
           duration: 0.7,
           stagger: 0.12,
           ease: "power2.out",
-          scrollTrigger: { trigger: el, start: "top 70%" },
+          scrollTrigger: { trigger: el, start: "top 70%", toggleActions: "play none none none" },
         });
       }
     }, el);

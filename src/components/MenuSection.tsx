@@ -20,15 +20,23 @@ const MenuSection = () => {
     if (!el) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
+    const header = el.querySelector("[data-menu-header]");
+    const allTitles = el.querySelectorAll("[data-cat-title]");
+    const allItems = el.querySelectorAll("[data-menu-item]");
+
+    // Set initial hidden state
+    if (header) gsap.set(header, { opacity: 0, y: 24 });
+    gsap.set(allTitles, { opacity: 0, x: -20 });
+    gsap.set(allItems, { opacity: 0, y: 16 });
+
     const ctx = gsap.context(() => {
-      const header = el.querySelector("[data-menu-header]");
       if (header) {
-        gsap.from(header, {
-          opacity: 0,
-          y: 24,
+        gsap.to(header, {
+          opacity: 1,
+          y: 0,
           duration: 0.7,
           ease: "power2.out",
-          scrollTrigger: { trigger: header, start: "top 85%" },
+          scrollTrigger: { trigger: header, start: "top 85%", toggleActions: "play none none none" },
         });
       }
 
@@ -37,23 +45,23 @@ const MenuSection = () => {
         const items = cat.querySelectorAll("[data-menu-item]");
 
         if (title) {
-          gsap.from(title, {
-            opacity: 0,
-            x: -20,
+          gsap.to(title, {
+            opacity: 1,
+            x: 0,
             duration: 0.6,
             ease: "power2.out",
-            scrollTrigger: { trigger: cat, start: "top 85%" },
+            scrollTrigger: { trigger: cat, start: "top 85%", toggleActions: "play none none none" },
           });
         }
 
         if (items.length) {
-          gsap.from(items, {
-            opacity: 0,
-            y: 16,
+          gsap.to(items, {
+            opacity: 1,
+            y: 0,
             duration: 0.5,
             stagger: 0.06,
             ease: "power2.out",
-            scrollTrigger: { trigger: cat, start: "top 80%" },
+            scrollTrigger: { trigger: cat, start: "top 80%", toggleActions: "play none none none" },
           });
         }
       });
