@@ -25,17 +25,17 @@ const MenuSection = () => {
     const allItems = el.querySelectorAll("[data-menu-item]");
 
     // Set initial hidden state
-    if (header) gsap.set(header, { opacity: 0, y: 24 });
-    gsap.set(allTitles, { opacity: 0, x: -20 });
-    gsap.set(allItems, { opacity: 0, y: 16 });
+    if (header) gsap.set(header, { opacity: 0, y: 14 });
+    gsap.set(allTitles, { opacity: 0, x: -12 });
+    gsap.set(allItems, { opacity: 0, y: 10 });
 
     const ctx = gsap.context(() => {
       if (header) {
         gsap.to(header, {
           opacity: 1,
           y: 0,
-          duration: 0.7,
-          ease: "power2.out",
+          duration: 0.4,
+          ease: "power3.out",
           scrollTrigger: { trigger: header, start: "top 85%", toggleActions: "play none none none" },
         });
       }
@@ -48,8 +48,8 @@ const MenuSection = () => {
           gsap.to(title, {
             opacity: 1,
             x: 0,
-            duration: 0.6,
-            ease: "power2.out",
+            duration: 0.35,
+            ease: "power3.out",
             scrollTrigger: { trigger: cat, start: "top 85%", toggleActions: "play none none none" },
           });
         }
@@ -58,9 +58,9 @@ const MenuSection = () => {
           gsap.to(items, {
             opacity: 1,
             y: 0,
-            duration: 0.5,
-            stagger: 0.06,
-            ease: "power2.out",
+            duration: 0.3,
+            stagger: 0.04,
+            ease: "power3.out",
             scrollTrigger: { trigger: cat, start: "top 80%", toggleActions: "play none none none" },
           });
         }

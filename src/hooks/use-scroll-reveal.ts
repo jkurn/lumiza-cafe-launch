@@ -12,7 +12,7 @@ export function useScrollReveal<T extends HTMLElement = HTMLDivElement>(
   options: { stagger?: number; y?: number; duration?: number; start?: string } = {}
 ) {
   const ref = useRef<T>(null);
-  const { stagger = 0.12, y = 30, duration = 0.8, start = "top 85%" } = options;
+  const { stagger = 0.06, y = 14, duration = 0.4, start = "top 85%" } = options;
 
   useEffect(() => {
     const el = ref.current;
@@ -32,7 +32,7 @@ export function useScrollReveal<T extends HTMLElement = HTMLDivElement>(
         y: 0,
         duration,
         stagger,
-        ease: "power2.out",
+        ease: "power3.out",
         scrollTrigger: {
           trigger: el,
           start,

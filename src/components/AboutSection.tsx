@@ -16,16 +16,16 @@ const AboutSection = () => {
     const image = el.querySelector("[data-about-image]");
     const textBlocks = el.querySelectorAll("[data-about-text]");
 
-    if (image) gsap.set(image, { opacity: 0, x: -40 });
-    if (textBlocks.length) gsap.set(textBlocks, { opacity: 0, y: 24 });
+    if (image) gsap.set(image, { opacity: 0, x: -24 });
+    if (textBlocks.length) gsap.set(textBlocks, { opacity: 0, y: 14 });
 
     const ctx = gsap.context(() => {
       if (image) {
         gsap.to(image, {
           opacity: 1,
           x: 0,
-          duration: 0.9,
-          ease: "power2.out",
+          duration: 0.5,
+          ease: "power3.out",
           scrollTrigger: { trigger: el, start: "top 75%", toggleActions: "play none none none" },
         });
       }
@@ -34,9 +34,9 @@ const AboutSection = () => {
         gsap.to(textBlocks, {
           opacity: 1,
           y: 0,
-          duration: 0.7,
-          stagger: 0.12,
-          ease: "power2.out",
+          duration: 0.4,
+          stagger: 0.06,
+          ease: "power3.out",
           scrollTrigger: { trigger: el, start: "top 70%", toggleActions: "play none none none" },
         });
       }

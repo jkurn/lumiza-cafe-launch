@@ -14,16 +14,16 @@ const HeroSection = () => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const targets = el.querySelectorAll("[data-hero]");
-    gsap.set(targets, { opacity: 0, y: 24 });
+    gsap.set(targets, { opacity: 0, y: 16 });
 
     const ctx = gsap.context(() => {
       gsap.to(targets, {
         opacity: 1,
         y: 0,
-        duration: 0.9,
-        stagger: 0.15,
+        duration: 0.5,
+        stagger: 0.08,
         ease: "power3.out",
-        delay: 0.2,
+        delay: 0.1,
       });
     }, el);
 
