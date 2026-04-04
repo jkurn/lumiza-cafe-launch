@@ -161,6 +161,7 @@ export const menuCategories: MenuCategory[] = [
       { name: "Iced Chai", description: "Spiced chai over ice", price: "$7.50" },
       { name: "Milkshake", description: "Choose: chocolate, strawberry, caramel or vanilla", price: "$7.50" },
       { name: "Smoothie", description: "Choose: mango, banana or mixed berries", price: "$8.50" },
+      { name: "Ice Matcha", description: "Chilled matcha over ice with milk", price: "$8.50", tag: "new" },
     ],
   },
 ];
