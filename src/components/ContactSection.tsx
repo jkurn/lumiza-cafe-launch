@@ -72,7 +72,7 @@ const ContactSection = () => {
               <div className="space-y-1">
                 {openingHours.map((h) => (
                   <div key={h.days} className="flex gap-4 text-sm">
-                    <span className="w-36 font-medium text-foreground">{h.days}</span>
+                    <span className="min-w-[10rem] font-medium text-foreground">{h.days}</span>
                     <span className="text-muted-foreground">{h.hours}</span>
                   </div>
                 ))}

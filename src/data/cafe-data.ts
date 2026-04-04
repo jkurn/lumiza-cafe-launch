@@ -21,7 +21,12 @@ export const openingHours = [
   { days: "Monday – Friday", hours: "5:30 AM – 3:00 PM" },
   { days: "Saturday", hours: "5:30 AM – 12:00 PM" },
   { days: "Sunday", hours: "Closed" },
+  { days: "Public holidays", hours: "Closed" },
 ];
+
+/** Short line for the hero — full hours live in Contact */
+export const openingHoursHeroSummary =
+  "Mon–Fri 5:30am–3pm · Sat 5:30am–12pm · Closed Sun & public holidays";
 
 export interface MenuItem {
   name: string;

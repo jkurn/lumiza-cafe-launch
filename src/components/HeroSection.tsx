@@ -2,7 +2,7 @@ import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { MapPin, Clock, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { cafeInfo, openingHours } from "@/data/cafe-data";
+import { cafeInfo, openingHoursHeroSummary } from "@/data/cafe-data";
 import heroImage from "@/assets/hero-placeholder.jpg";
 
 const HeroSection = () => {
@@ -67,7 +67,7 @@ const HeroSection = () => {
           </div>
           <div className="flex items-center gap-2 rounded-full bg-primary-foreground/10 px-4 py-2 backdrop-blur-sm">
             <Clock className="h-4 w-4 text-accent" />
-            <span className="text-sm">{openingHours[0].hours}</span>
+            <span className="text-sm">{openingHoursHeroSummary}</span>
           </div>
         </div>
         <p data-hero className="mt-2 text-xs text-primary-foreground/60">{cafeInfo.addressNote}</p>
