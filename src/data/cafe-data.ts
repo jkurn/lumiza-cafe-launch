@@ -38,6 +38,7 @@ export interface MenuItem {
 export interface MenuCategory {
   title: string;
   items: MenuItem[];
+  note?: string;
 }
 
 export const menuCategories: MenuCategory[] = [
@@ -52,7 +53,7 @@ export const menuCategories: MenuCategory[] = [
       { name: "BLT Roll", description: "Bacon, lettuce, tomato", price: "$10.50" },
       { name: "BLAT Roll", description: "Bacon, lettuce, avocado, tomato", price: "$12.50", tag: "popular" },
       { name: "Seasonal Fruit Salad", description: "Served w/ yoghurt", price: "$10.00", tag: "veggie" },
-      { name: "Homemade Granola", description: "Served w/ yoghurt", price: "$8.90", tag: "veggie" },
+      { name: "Homemade Granola", description: "Served w/ yoghurt", price: "$9.90", tag: "veggie" },
       { name: "Eggs Benedict", description: "Two poached eggs, ham w/ homemade hollandaise sauce on artisan sourdough", price: "$17.90" },
       { name: "Eggs Salmon Benedict", description: "Two poached eggs w/ smoked salmon & hollandaise on artisan sourdough", price: "$20.90" },
       { name: "Avo Smash", description: "Smashed avo w/ tomato and feta on sourdough", price: "$11.90", tag: "popular" },
@@ -137,13 +138,14 @@ export const menuCategories: MenuCategory[] = [
       { name: "Macchiato", description: "Espresso marked with foam", price: "$4.00" },
       { name: "Cappuccino", description: "Classic cap with silky microfoam", price: "$4.50 / $5.00" },
       { name: "Latte", description: "Smooth espresso with steamed milk", price: "$4.50 / $5.00" },
-      { name: "Flat White", description: "Our signature smooth & velvety flat white", price: "$4.50 / $5.00", tag: "popular" },
+      { name: "Flat White", description: "Our signature smooth & velvety flat white", price: "$4.50 / $5.00" },
       { name: "Long Black", description: "Double shot over hot water", price: "$4.50 / $5.00" },
       { name: "Mocha", description: "Espresso, chocolate & steamed milk", price: "$4.50 / $5.00" },
       { name: "Hot Chocolate", description: "Rich & creamy hot chocolate", price: "$4.50 / $5.00" },
       { name: "Chai Latte", description: "Spiced chai with steamed milk", price: "$4.50 / $5.00" },
       { name: "Green Tea Latte", description: "Green tea with steamed milk", price: "$5.00 / $5.50" },
     ],
+    note: "Extra charges apply for alternative milk.",
   },
   {
     title: "Tea",

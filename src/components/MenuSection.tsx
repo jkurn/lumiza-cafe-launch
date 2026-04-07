@@ -113,6 +113,11 @@ const MenuSection = () => {
                   </div>
                 ))}
               </div>
+              {category.note && (
+                <p className="mt-3 text-sm italic text-muted-foreground">
+                  * {category.note}
+                </p>
+              )}
             </div>
           ))}
         </div>
