@@ -1,6 +1,7 @@
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Leaf } from "lucide-react";
 import { menuCategories } from "@/data/cafe-data";
 import { Badge } from "@/components/ui/badge";
 
@@ -102,8 +103,16 @@ const MenuSection = () => {
                       <div className="flex items-center gap-2">
                         <span className="font-medium text-foreground">{item.name}</span>
                         {item.tag && (
-                          <Badge variant="secondary" className={`text-xs ${tagColors[item.tag] ?? ""}`}>
-                            {item.tag}
+                          <Badge
+                            variant="secondary"
+                            className={`text-xs ${item.tag === "veggie" ? "px-1.5 py-1" : ""} ${tagColors[item.tag] ?? ""}`}
+                            aria-label={item.tag === "veggie" ? "Vegetarian" : undefined}
+                          >
+                            {item.tag === "veggie" ? (
+                              <Leaf className="h-3.5 w-3.5" strokeWidth={2.25} aria-hidden />
+                            ) : (
+                              item.tag
+                            )}
                           </Badge>
                         )}
                       </div>
