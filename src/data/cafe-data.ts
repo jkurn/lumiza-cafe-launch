@@ -52,7 +52,6 @@ export const menuCategories: MenuCategory[] = [
       { name: "Bacon & Egg Roll", description: "Choice of sauce — tomato, BBQ or chilli", price: "$9.50", tag: "popular" },
       { name: "BLT Roll", description: "Bacon, lettuce, tomato", price: "$10.50" },
       { name: "BLAT Roll", description: "Bacon, lettuce, avocado, tomato", price: "$12.50", tag: "popular" },
-      { name: "Seasonal Fruit Salad", description: "Served w/ yoghurt", price: "$10.00", tag: "veggie" },
       { name: "Homemade Granola", description: "Served w/ yoghurt", price: "$9.90", tag: "veggie" },
       { name: "Eggs Benedict", description: "Two poached eggs, ham w/ homemade hollandaise sauce on artisan sourdough", price: "$17.90" },
       { name: "Eggs Salmon Benedict", description: "Two poached eggs w/ smoked salmon & hollandaise on artisan sourdough", price: "$20.90" },
@@ -83,6 +82,15 @@ export const menuCategories: MenuCategory[] = [
       { name: "Lumiza Burger", description: "Homemade beef patty, mixed leaves, cheese, bacon, egg with tomato relish", price: "$14.00", tag: "popular" },
       { name: "Satay Chicken Burger", description: "Grilled chicken breast, mixed leaves, tomato, cheese with satay sauce", price: "$12.00" },
       { name: "Classic Chicken Burger", description: "Grilled chicken breast, mixed leaves, cheese and mayo", price: "$12.00", tag: "popular" },
+    ],
+  },
+  {
+    title: "Sandwiches",
+    items: [
+      { name: "Grilled Chicken Salad Sandwich", description: "Grilled chicken with fresh salad", price: "$15.00" },
+      { name: "Ham Salad Sandwich", description: "Ham with fresh salad", price: "$15.00" },
+      { name: "Chicken Schnitzel Sandwich", description: "Chicken schnitzel with lettuce & mayo", price: "$12.00" },
+      { name: "Salad Sandwich", description: "Fresh garden salad", price: "$10.00", tag: "veggie" },
     ],
   },
   {
